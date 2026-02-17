@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Data Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Data <span class="highlight">Dashboard</span></h1>
+                <p>Realtime Consolidated Data from Google Sheets</p>
+            </div>
+            <div class="status-indicator" id="statusIndicator">
+                <span class="dot"></span>
+                <span class="text">Connecting...</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="glass-panel">
+                <div class="toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search data...">
+                    </div>
+                    <button id="refreshBtn" class="refresh-btn">
+                        <i class="fa-solid fa-rotate-right"></i> Refresh
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <table id="dataTable">
+                        <thead>
+                            <tr id="tableHead">
+                                <!-- Headers will be injected here -->
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data will be injected here -->
+                        </tbody>
+                    </table>
+                    
+                    <div id="loadingState" class="state-message">
+                        <div class="spinner"></div>
+                        <p>Loading data...</p>
+                    </div>
+
+                    <div id="errorState" class="state-message hidden">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <p>Failed to load data.</p>
+                        <small>Please check your API URL in script.js</small>
+                    </div>
+                    
+                    <div id="emptyState" class="state-message hidden">
+                        <i class="fa-regular fa-folder-open"></i>
+                        <p>No data found.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <small>Data updates realtime from connected sheets.</small>
+                    <small id="lastUpdated">Last updated: Never</small>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
