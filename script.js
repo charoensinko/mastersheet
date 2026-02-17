@@ -3,7 +3,7 @@
  * Replace the URL below with your Google Apps Script Web App URL.
  * Ensure the script is deployed as a Web App with "Anyone" access.
  */
-const API_URL = 'REPLACE_WITH_YOUR_DEPLOYED_GOOGLE_APPS_SCRIPT_URL'; 
+const API_URL = 'https://script.google.com/macros/s/AKfycbzzM4FGr-WKUee2N45-8404io2RMs7USkAfuo7N2hNwvZ6tA0EBNgPayNGGwK8r1da1/exec';
 
 // DOM Elements
 const dataTable = document.getElementById('dataTable');
